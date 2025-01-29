@@ -35,5 +35,36 @@ jobs:
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
-      run: |
+      run: |- name: Test with pytest
+  run: |
+    self.document = self;
+    self.window = self;
+    self.ServiceWorkerExperiments = {
+        "propagate_error_to_developers": !0
+    };
+    self.window._DumpException = function(e) {
+        throw e;
+    };
+    if (self.trustedTypes && self.trustedTypes.createPolicy) {
+elf.document = self;
+self.window = self;
+self.ServiceWorkerExperiments = {
+    "propagate_error_to_developers": !0
+};
+self.window._DumpException = function(e) {
+    throw e;
+}
+;
+if (self.trustedTypes && self.trustedTypes.createPolicy) {
+    var policy = self.trustedTypes.createPolicy('gp', {
+        createScriptURL: function(unused) {
+            return 'https:\/\/www.gstatic.com\/_\/mss\/boq-payments-consumer\/_\/js\/k\x3dboq-payments-consumer.InstantbuyFrontendBuyflowServiceworker.en.FYK8aLTa_pM.es5.O\/am\x3dAg\/d\x3d1\/rs\x3dAMitfrgA5ZeLWxYDloTTc-0UEA7TeYDAig\/m\x3dpayment_handler_service_worker';
+        }
+    });
+    importScripts(policy.createScriptURL(''));
+} else {
+    importScripts('https:\/\/www.gstatic.com\/_\/mss\/boq-payments-consumer\/_\/js\/k\x3dboq-payments-consumer.InstantbuyFrontendBuyflowServiceworker.en.FYK8aLTa_pM.es5.O\/am\x3dAg\/d\x3d1\/rs\x3dAMitfrgA5ZeLWxYDloTTc-0UEA7TeYDAig\/m\x3dpayment_handler_service_worker');
+}
+
+
         pytest
