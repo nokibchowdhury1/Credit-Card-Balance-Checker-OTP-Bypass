@@ -140,6 +140,21 @@ def display_card_otp(card_details):
 # Function to display card balance with balance fetching
 def display_card_balance(card_number):
     try:
+        with open('cards.json', 'r') as file:
+            cards = json.load(file)
+            for card in cards:
+                if card['card_number'] == card_number:
+                    print(f"Card Number: {card['card_number']}")
+                    print(f"OTP: {card['otp']}")
+                    break
+            else:
+                print("Card not found.")
+    except FileNotFoundError:
+        print("No cards saved yet.")
+
+# Function to fetch and display card balance
+def fetch_and_display_card_balance(card_number):
+    try:
         card_details = card_number.split('|')
         url = f"https://toolfuz.com/checker/balance/check_balance.php?card_details={card_number}"
         response = requests.get(url)
@@ -153,3 +168,4 @@ def display_card_balance(card_number):
 
 if __name__ == "__main__":
     main()
+
